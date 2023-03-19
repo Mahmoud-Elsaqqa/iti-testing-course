@@ -1,13 +1,41 @@
 package gov.iti.jets.testing.lab01;
 
-import java.util.Collection;
+import java.util.ArrayList;
+import java.util.Optional;
 
 public class User {
     private String email;
 
-    private Collection<String> passwords;
+    private ArrayList<String> passwords = new ArrayList<>();
 
-    // Implement and test this class
+    public User(String email, String password) {
+        this.email = email;
+        passwords.add(password);
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return passwords.get(passwords.size() - 1);
+    }
+
+    public void updatePassword(String password) throws IllegalArgumentException {
+        Optional<String> duplicatePassword = passwords.stream().filter(s -> s.equals(password)).findAny();
+        if(duplicatePassword.isPresent()){
+            throw new IllegalArgumentException("Your new password can't be the same as old password");
+        }
+        else {
+            passwords.add(password);
+        }
+    }
+
+// Implement and test this class
 
     // You can create a user
 

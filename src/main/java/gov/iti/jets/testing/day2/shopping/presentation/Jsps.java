@@ -7,7 +7,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public enum Jsps {
-    VIEW_CREATED_ORDER("/WEB-INF/view-created-order.jsp");
+    VIEW_CREATED_ORDER("/WEB-INF/view-created-order.jsp"),
+    VIEW_CREATED_USER("/WEB-INF/view-created-user.jsp");
 
     private final String path;
 

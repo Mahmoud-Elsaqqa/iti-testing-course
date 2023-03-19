@@ -16,7 +16,7 @@ class IgnoredOrderTest {
     @Test
     void test() {
         // Arrange
-        User user = new User("Mahmoud", "01117950444");
+        User user = new User("Mahmoud", "01117950444","9873498237489234");
         Database.doInTransactionWithoutResult(em -> UserDao.save(user, em));
         ShoppingCart shoppingCart = new ShoppingCart(user.getId());
 

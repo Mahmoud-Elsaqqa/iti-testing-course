@@ -42,7 +42,7 @@ public class CreateOrderServlet extends HttpServlet {
     }
 
     private static ShoppingCart createFakeShoppingCart() {
-        User user = new User( "Mahmoud", "011" );
+        User user = new User( "Mahmoud", "011","123457843" );
         Database.doInTransactionWithoutResult( em -> UserDao.save( user, em )
         );
 
